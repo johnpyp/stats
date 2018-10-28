@@ -27,9 +27,9 @@ print(od)
 fig = plt.figure(figsize=(18, 5))
 ax = fig.add_subplot(1, 1, 1)
 ax.bar(od.keys(), od.values(), align='center')
-for i, v in enumerate(od.values()):
-    ax.text(i, v, str(v), color='red', fontweight='bold')
+for key in od.keys():
+    ax.text(key, od[key], str(od[key]), color='red', fontweight='bold')
 
 # ax.hist(lis, bins=range(min(lis), max(lis) + 1, 1))
 # mpld3.show()
-mpld3.save_html(fig, '10000000.html')
+mpld3.save_html(fig, sys.argv[1] + '.html')
