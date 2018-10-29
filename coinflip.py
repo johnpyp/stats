@@ -9,11 +9,13 @@ import json
 inputNum = int(sys.argv[1])
 lis = []
 counter = 0
-for flip in range(inputNum):
+total = 0
+while total < inputNum:
     res = random.randint(0, 1)
     if res == 0:
         lis.append(counter)
         counter = 0
+        total = total + 1
     else:
         counter = counter + 1
 if counter != 0:
@@ -30,6 +32,8 @@ ax.bar(od.keys(), od.values(), align='center')
 for key in od.keys():
     ax.text(key, od[key], str(od[key]), color='red', fontweight='bold')
 
+plt.show()
 # ax.hist(lis, bins=range(min(lis), max(lis) + 1, 1))
 # mpld3.show()
+
 mpld3.save_html(fig, sys.argv[1] + '.html')
