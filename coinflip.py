@@ -15,9 +15,9 @@ while total < inputNum:
     if res == 0:
         lis.append(counter)
         counter = 0
-        total = total + 1
+        total += 1
     else:
-        counter = counter + 1
+        counter += 1
 if counter != 0:
     lis.append(counter)
 
