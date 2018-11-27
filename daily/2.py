@@ -4,7 +4,7 @@ import unittest
 
 def algo(arr):
     return_arr = []
-    for i, ele in enumerate(arr):
+    for i in enumerate(arr):
         temp = list(arr)
         temp.pop(i)
         return_arr.append(reduce(lambda x, y: x * y, temp))
